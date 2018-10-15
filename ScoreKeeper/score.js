@@ -1,48 +1,44 @@
-var p1Button = document.querySelector("#p1"); //selecting Player One Button
-var p2Button = document.getElementById("p2"); //selecting Player Two Button
-var resetButton = document.querySelector("#reset")//selecting Reset Button
-var p1Score = 0;
-var p1Display = document.querySelector("#p1Display"); //selecting Player One Score on H1
-var numInput = document.querySelector("input") // input for winningscore
-var p2Score = 0;
-var p2Display = document.querySelector("#p2Display"); //selecting Player Two Score on H1
-var gameOver = false;
-var winningScore = 5
-var winningScoreDisplay = document.querySelector("p span") // selecting the winningscore efter Playing to:
+const p1Button = document.querySelector("#p1"); //selecting Player One Button
+const p2Button = document.getElementById("p2"); //selecting Player Two Button
+const resetButton = document.querySelector("#reset"); //selecting Reset Button
+let p1Score = 0;
+const p1Display = document.querySelector("#p1Display"); //selecting Player One Score on H1
+const numInput = document.querySelector("input"); // input for winningscore
+let p2Score = 0;
+const p2Display = document.querySelector("#p2Display"); //selecting Player Two Score on H1
+let gameOver = false;
+let winningScore = 5;
+const winningScoreDisplay = document.querySelector("p span"); // selecting the winningscore efter Playing to:
 
-//Clicking the Player One button is increasing the p1Score and 
+//Clicking the Player One button is increasing the p1Score and
 //p1Scoredisplay.
 //Winner player's score turns green.
 
 p1Button.addEventListener("click", function() {
     if (!gameOver) {
-
         p1Score++;
 
         if (p1Score === winningScore) {
-            p1Display.classList.add("winner")
+            p1Display.classList.add("winner");
             gameOver = true;
         }
 
         p1Display.textContent = p1Score;
-
     }
 });
 
-//Clicking the Player Two button is increasing the p2Score and 
+//Clicking the Player Two button is increasing the p2Score and
 //p2Scoredisplay.
 //Winner player's score turns green.
 
 p2Button.addEventListener("click", function() {
     if (!gameOver) {
-
         p2Score++;
 
         if (p2Score === winningScore) {
-            p2Display.classList.add("winner")
+            p2Display.classList.add("winner");
 
             gameOver = true;
-
         }
 
         p2Display.textContent = p2Score;
@@ -50,10 +46,9 @@ p2Button.addEventListener("click", function() {
 });
 
 resetButton.addEventListener("click", function() {
-	reset();
-
+    reset();
 });
-//reset turns everything to thte beginning of the game.
+//reset turns everything to the beginning of the game.
 function reset() {
     p1Score = 0;
     p2Score = 0;
@@ -64,7 +59,7 @@ function reset() {
     gameOver = false;
 }
 
-//if somebody changes the winningscore during the game, 
+//if somebody changes the winningscore during the game,
 //game is resetting with new winningscore.
 numInput.addEventListener("change", function() {
     winningScoreDisplay.textContent = this.value;

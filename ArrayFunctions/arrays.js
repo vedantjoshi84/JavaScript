@@ -15,28 +15,24 @@ function isUniform(arr) {
         }
     }
     return true;
-
 }
 
 //sumArray functions adds all the elements inside of an array.
 function sumArray(arr) {
-
     for (var i = 0, sum = 0; i < arr.length; i++) {
-        sum = arr[i] + sum
+        sum = arr[i] + sum;
     }
 
-    return sum
-
+    return sum;
 }
 
 //max function is showing the biggest element in an array.
-function max(arr){
+function max(arr) {
     var max = arr[0];
 
-    for(var i = 1; i < arr.length; i++) {
-
-        if ( arr[i] > max) {
-            max = arr[i] 
+    for (var i = 1; i < arr.length; i++) {
+        if (arr[i] > max) {
+            max = arr[i];
         }
     }
     return max;

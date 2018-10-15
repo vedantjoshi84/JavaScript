@@ -2,12 +2,11 @@
 <html>
 
 <head>
-    <title>Circles</title>
-    <link rel="stylesheet" type="text/css" href="circles.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.9/howler.js"></script>
-    <script type="text/javascript" src="paper-full.js"></script>
-    <script type="text/paperscript" canvas="myCanvas">
-
+  <title>Circles</title>
+  <link rel="stylesheet" type="text/css" href="circles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.9/howler.js"></script>
+  <script type="text/javascript" src="paper-full.js"></script>
+  <script type="text/paperscript" canvas="myCanvas">
     var keyData = {
 
 q: {
@@ -169,24 +168,24 @@ color: '#2c3e50'
 }
 
 
-    	var circles = [];
+      var circles = [];
 
         function onKeyDown(event){ 
-        	if(keyData[event.key]){
-        	<!-- define a random point -->
-         	var maxPoint = new Point(view.size.width, view.size.height);
-         	var randomPoint = Point.random();
-		 	var point = maxPoint * randomPoint;
-		 <!-- define a new circle-->
-		 	var newCircle = new Path.Circle(point, 500)
-		 	newCircle.fillColor = keyData[event.key].color;
-		 	keyData[event.key].sound.play();
-	     	circles.push(newCircle);
-	 		}
-    	}
+          if(keyData[event.key]){
+          <!-- define a random point -->
+          var maxPoint = new Point(view.size.width, view.size.height);
+          var randomPoint = Point.random();
+      var point = maxPoint * randomPoint;
+     <!-- define a new circle-->
+      var newCircle = new Path.Circle(point, 500)
+      newCircle.fillColor = keyData[event.key].color;
+      keyData[event.key].sound.play();
+        circles.push(newCircle);
+      }
+      }
 
-    	<!-- func makes circles shrink and changing color -->
-    	function onFrame(event){
+      <!-- func makes circles shrink and changing color -->
+      function onFrame(event){
   for(var i = 0; i < circles.length; i++){
     circles[i].scale(0.9);
     circles[i].fillColor.hue += 1;
@@ -203,7 +202,7 @@ color: '#2c3e50'
 </head>
 
 <body>
-    <canvas id="myCanvas" resize></canvas>
+  <canvas id="myCanvas" resize></canvas>
 </body>
 
 </html>

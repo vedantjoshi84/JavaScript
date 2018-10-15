@@ -49,7 +49,7 @@ li span {
 
 li:hover span {
     width: 40px;
-    opacity: 1.0;
+    opacity: 1;
 }
 
 input {
@@ -59,7 +59,7 @@ input {
     padding: 13px 13px 13px 20px;
     box-sizing: border-box;
     color: #2980b9;
-    border: 3px solid rgba(0, 0, 0, 0)
+    border: 3px solid rgba(0, 0, 0, 0);
 }
 
 input:focus {
