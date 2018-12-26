@@ -1,2 +1,2 @@
 # JavaScript
-This repo contains my JavaScript codes.
+This repo contains my JavaScript codes
